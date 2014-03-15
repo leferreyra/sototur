@@ -1,0 +1,13 @@
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 100;
+  src: url('../fonts/OpenSans-Light.ttf');
+}
+
+@font-face {
+  font-family: 'Throw My Hands';
+  font-style: normal;
+  src: url('../fonts/ThrowMyHands.ttf');
+}

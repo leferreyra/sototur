@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% load website_extras %}
+
+{% block content %}
+
+    <!-- Carousel -->
+    <div class="carousel slide" data-ride='carousel' id='home-carousel'>
+        <ol class='carousel-indicators'>
+        	{% for slide in slides %}
+        		<li class='{% if forloop.counter == 1 %}active{% endif %}'></li>
+        	{% endfor %}
+        </ol>
+
+        <div class="carousel-inner">
+        	{% for slide in slides %}
+	            <div class="item {% if forloop.counter == 1 %}active{% endif %}" style='background-image: url("{{ MEDIA_URL }}{{ slide.image }}")'>
+	                <div class="carousel-caption">
+	                    <h2>{{ slide.name }}</h2>
+                        {% if slide.package %}
+                            <a class='btn btn-primary' href='{% url "package_view" slide.package.pk %}'>
+                        {% elif slide.category %}
+                            <a class='btn btn-primary' href='{% url "category_view" slide.category.pk %}'>
+                        {% else %}
+                            <a class='btn btn-primary' href='{{ slide.link }}' target='_blank'>
+                        {% endif %}
+                                Descubrir
+                            </a>
+	                </div>
+	            </div>
+            {% endfor %}
+        </div>
+
+        <a class="left carousel-control" href="#home-carousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="right carousel-control" href="#home-carousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+    </div>
+
+	<!-- Bloques -->
+	<div class="container">
+		{% for block_sublist in object_list|partition_horizontal:"3" %}
+			<div class="col-md-4">
+				{% for block in block_sublist %}
+                    {% if block.package %}
+                        <a href='{% url "package_view" block.package.pk %}'>
+                    {% elif block.category %}
+    					<a href='{% url "category_view" block.category.pk %}'>
+                    {% else %}
+                        <a href='{{ block.link }}' target='_blank'>
+                    {% endif %}
+                            <img class='home-block' src="{{ MEDIA_URL }}{{ block.image }}" alt="{{ block.name }}">
+                        </a>
+				{% endfor %}
+			</div>
+		{% endfor %}
+	</div>
+
+    <!-- Maps -->
+    <div class="maps">
+        <h1 class='big-centered'>Nuestra Oficina</h1>
+        <iframe height="450" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=es-419&amp;geocode=&amp;q=av+paraguay+247,+resistencia,+argentina&amp;aq=&amp;sll=37.09024,-112.5&amp;sspn=43.037246,120.058594&amp;ie=UTF8&amp;hq=&amp;hnear=Av+Paraguay+247,+Resistencia,+Chaco,+Argentina&amp;ll=-27.44919,-58.980141&amp;spn=0.011825,0.021136&amp;t=m&amp;z=17&amp;iwloc=near&amp;output=embed"></iframe>
+    </div>
+{% endblock %}

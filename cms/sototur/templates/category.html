@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load website_extras %}
+
+{% block content %}
+
+	<!-- Bloques -->
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h1 class='big-centered'>{{ category.name }}</h1>
+			</div>
+		</div>
+		<div class="row">
+			{% for package_sublist in object_list|partition_horizontal:"2" %}
+				<div class="col-md-6">
+					{% for package in package_sublist %}
+						<a href='{% url "package_view" package.pk %}'>
+							<h2>{{ package.title }}</h2>
+							<img class='package' src="{{ MEDIA_URL }}{{ package.image }}" alt="{{ package.title }}">
+						</a>
+					{% endfor %}
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+{% endblock %}

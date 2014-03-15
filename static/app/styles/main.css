@@ -1,0 +1,99 @@
+
+.logo {
+    display: block;
+    margin: 20px auto;
+}
+
+.featured {
+    min-height: 200px;
+    background-color: #333;
+}
+
+.carousel .carousel-inner .item {
+    height: 300px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.carousel .carousel-caption {
+    bottom: 25%;
+}
+
+.carousel .carousel-caption .btn {
+    margin-top: 10px;
+}
+
+.carousel h2 {
+    font-weight: bold;
+}
+
+.carousel {
+    border-bottom: 20px solid #e73f24;
+}
+
+.container.package {
+    margin-top: 40px;
+}
+
+
+.maps iframe {
+    width: 100%;
+    position: relative;
+    bottom: -5px;
+}
+
+.fb-like {
+    margin-top: 15px;
+}
+
+address {
+    line-height: 172%;
+    margin-top: 45px;
+    font-family: 'Open Sans', arial, sans-serif;
+    font-size: 20px;
+}
+
+address .glyphicon {
+    margin-right: 5px;
+}
+
+img.home-block {
+    width: 100%;
+    height: auto;
+}
+
+img.home-block:first-child {
+    margin-top: 40px;
+}
+
+img.package {
+    width: 100%;
+    height: auto;
+    margin-bottom: 40px;
+}
+
+h1, h2, h3 {
+    font-family: 'Open Sans', arial, sans-serif;
+}
+
+h1.big-centered {
+    margin: 50px;
+    margin-bottom: 30px;
+    font-size: 50px;
+    font-weight: lighter;
+    text-align: center;
+}
+
+footer {
+    height: 50px;
+    background-color: black;
+}
+
+#main-nav {
+    margin-bottom: 0;
+}
+
+#main-nav li {
+    text-transform: uppercase;
+}

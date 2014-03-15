@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<div class="container package">
+		<div class="col-md-6">
+			<img class='package' src="{{ MEDIA_URL }}{{ object.image }}" alt="object.title">
+		</div>
+		<div class="col-md-6">
+			
+			<h1>{{ object.title }}</h1>
+
+			{% autoescape off %}
+			{{ object.desc }}
+			{% endautoescape %}
+		</div>
+	</div>
+{% endblock %}
