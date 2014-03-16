@@ -3,6 +3,9 @@
 *.pyc
 sototur_virt
 settings*.py
+static/*
+media/*
+migrations
 
 dist
 .tmp
