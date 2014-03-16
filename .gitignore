@@ -3,6 +3,7 @@
 *.pyc
 sototur_virt
 settings*.py
+wsgi.py
 static/*
 media/*
 migrations
