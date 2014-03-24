@@ -36,6 +36,11 @@
     margin-top: 40px;
 }
 
+.container.contact {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
 
 .maps iframe {
     width: 100%;
@@ -96,4 +101,21 @@ footer {
 
 #main-nav li {
     text-transform: uppercase;
+}
+
+.MP-common-orange-CDl {
+    margin: 0px !important;
+}
+
+.package-description {
+    padding-bottom: 40px;
+}
+
+#MP-Checkout-dialog {
+    z-index: 1000 !important;
+}
+
+#MP-Checkout-dialog iframe {
+    width: 728px !important;
+    height: 580px !important;
 }

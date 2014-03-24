@@ -1,6 +1,6 @@
 from django.conf.urls import patterns, include, url
 from django.conf import settings
-from website.views import HomeBlockList, CategoryPackagesList, PackageDetail
+from website.views import HomeBlockList, CategoryPackagesList, PackageDetail, ContactView
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -12,6 +12,7 @@ urlpatterns = patterns('',
     url(r'^$', HomeBlockList.as_view()),
     url(r'^paquetes/(?P<pk>\d+)$', CategoryPackagesList.as_view(), name='category_view'),
     url(r'^paquete/(?P<pk>\d+)$', PackageDetail.as_view(), name='package_view'),
+    url(r'^contacto/$', ContactView.as_view(), name='contact_view'),
     url(r'^admin/', include(admin.site.urls)),
 )
 
